@@ -16,11 +16,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>D:\Github\EFCore.Kit\src\EFCore.Kit\EFCore.Kit.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\EFCore.Kit.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>D:\Github\EFCore.Kit\src\EFCore.Kit\EFCore.Kit.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\netstandard2.0\EFCore.Kit.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
