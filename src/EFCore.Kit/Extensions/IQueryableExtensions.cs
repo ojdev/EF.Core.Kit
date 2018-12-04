@@ -4,6 +4,9 @@ using System.Linq.Expressions;
 
 namespace EFCore.Kit.Extensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class IQueryableExtensions
     {
         /// <summary>

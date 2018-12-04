@@ -6,8 +6,17 @@ using System.Threading.Tasks;
 
 namespace EFCore.Kit.Extensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class MediatorExtension
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mediator"></param>
+        /// <param name="ctx"></param>
+        /// <returns></returns>
         public static async Task DispatchDomainEventsAsync(this IMediator mediator, KitDbContext ctx)
         {
             var domainEntities = ctx.ChangeTracker

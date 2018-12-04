@@ -6,15 +6,48 @@ using System.Threading.Tasks;
 
 namespace EFCore.Kit.SeedWork
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
+    /// <typeparam name="TKey"></typeparam>
     public interface IRepository<TEntity, TKey>
         where TEntity : TEntity<TKey>
         where TKey : IComparable, IComparable<TKey>
     {
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         Task<TEntity> GetAsync(TKey key, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         IQueryable<TEntity> Query();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         Task<TEntity> UpdateAsync(TEntity entity, CancellationToken cancellationToken = default(CancellationToken));
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="key"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         Task<bool> DeleteAsync(TKey key, CancellationToken cancellationToken = default(CancellationToken));
         /// <summary>
         /// 

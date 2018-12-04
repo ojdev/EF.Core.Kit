@@ -5,10 +5,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFCore.Kit.SeedWork
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TKey"></typeparam>
     public abstract class TEntity<TKey> : IEntity where TKey : IComparable, IComparable<TKey>
     {
         int? _requestedHashCode;
         TKey _Id;
+        /// <summary>
+        /// 
+        /// </summary>
         public virtual TKey Id
         {
             get => _Id;
@@ -19,32 +26,54 @@ namespace EFCore.Kit.SeedWork
         /// </summary>
         public string TenantId { get; set; }
         private DateTimeOffset _creationTime;
+        /// <summary>
+        /// 
+        /// </summary>
         [NotMapped]
         public DateTimeOffset CreationTime => _creationTime;
         private DateTimeOffset? _lastUpdateTime;
         private List<INotification> _domainEvents;
+        /// <summary>
+        /// 
+        /// </summary>
         public IReadOnlyCollection<INotification> DomainEvents => _domainEvents?.AsReadOnly();
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="eventItem"></param>
         public void AddDomainEvent(INotification eventItem)
         {
             _domainEvents = _domainEvents ?? new List<INotification>();
             _domainEvents.Add(eventItem);
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="eventItem"></param>
         public void RemoveDomainEvent(INotification eventItem)
         {
             _domainEvents?.Remove(eventItem);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
         public void ClearDomainEvents()
         {
             _domainEvents?.Clear();
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public bool IsTransient()
         {
             return EqualityComparer<TKey>.Default.Equals(Id, default(TKey));
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         public override bool Equals(object obj)
         {
             if (obj == null || !(obj is TEntity<TKey>))
@@ -63,7 +92,10 @@ namespace EFCore.Kit.SeedWork
             else
                 return EqualityComparer<TKey>.Default.Equals(item.Id, Id);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public override int GetHashCode()
         {
             if (!IsTransient())
@@ -77,6 +109,12 @@ namespace EFCore.Kit.SeedWork
                 return base.GetHashCode();
 
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         public static bool operator ==(TEntity<TKey> left, TEntity<TKey> right)
         {
             if (Object.Equals(left, null))
@@ -84,7 +122,12 @@ namespace EFCore.Kit.SeedWork
             else
                 return left.Equals(right);
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="left"></param>
+        /// <param name="right"></param>
+        /// <returns></returns>
         public static bool operator !=(TEntity<TKey> left, TEntity<TKey> right)
         {
             return !(left == right);

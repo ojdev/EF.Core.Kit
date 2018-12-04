@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace EFCore.Kit.Extensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public static class IEnumerableExtensions
     {
         /// <summary>

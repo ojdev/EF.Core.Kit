@@ -1,7 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageIconUrl></PackageIconUrl>
+    <RepositoryUrl>https://github.com/ojdev/EFCore.Kit</RepositoryUrl>
+    <RepositoryType>github</RepositoryType>
+    <PackageTags>ef core</PackageTags>
+    <Company>欧俊</Company>
+    <Authors>欧俊</Authors>
+    <Description>EFCore.Kit</Description>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/ojdev/EFCore.Kit/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ojdev/EFCore.Kit</PackageProjectUrl>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>D:\Github\EFCore.Kit\src\EFCore.Kit\EFCore.Kit.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>D:\Github\EFCore.Kit\src\EFCore.Kit\EFCore.Kit.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
