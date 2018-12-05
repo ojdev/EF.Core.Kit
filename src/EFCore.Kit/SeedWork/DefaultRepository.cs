@@ -11,6 +11,20 @@ namespace EFCore.Kit.SeedWork
     /// 
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
+    public class DefaultRepository<TEntity> : DefaultRepository<TEntity, int> where TEntity : Entity<int>
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
+        public DefaultRepository(KitDbContext context) : base(context)
+        {
+        }
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TKey"></typeparam>
     public class DefaultRepository<TEntity, TKey> : IRepository<TEntity, TKey>
         where TEntity : Entity<TKey>
