@@ -6,7 +6,7 @@ namespace EFCore.Kit.UnitTest
 {
     public class TEntityUnitTest
     {
-        public class GuidEntity : TEntity<Guid>
+        public class GuidEntity : Entity<Guid>
         {
             public GuidEntity(Guid id)
             {

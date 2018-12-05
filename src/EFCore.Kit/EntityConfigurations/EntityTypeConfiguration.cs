@@ -11,7 +11,7 @@ namespace EFCore.Kit.EntityConfigurations
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TKey"></typeparam>
     public class EntityTypeConfiguration<TEntity, TKey> : IEntityTypeConfiguration<TEntity>
-        where TEntity : TEntity<TKey>
+        where TEntity : Entity<TKey>
         where TKey : IComparable, IComparable<TKey>
     {
         /// <summary>
