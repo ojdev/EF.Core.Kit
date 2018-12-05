@@ -10,7 +10,7 @@ namespace EFCore.Kit.SeedWork
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TKey"></typeparam>
     public class MegreProperty<TEntity,TKey>
-        where TEntity : TEntity<TKey>
+        where TEntity : Entity<TKey>
         where TKey : IComparable, IComparable<TKey>
     {
         private EntityEntry<TEntity> _entity;
