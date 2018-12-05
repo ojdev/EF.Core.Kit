@@ -10,6 +10,14 @@ namespace EFCore.Kit.SeedWork
     /// 
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
+    public interface IRepository<TEntity> where TEntity : Entity<int>
+    {
+
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TKey"></typeparam>
     public interface IRepository<TEntity, TKey>
         where TEntity : Entity<TKey>
