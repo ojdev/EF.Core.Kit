@@ -11,7 +11,7 @@ namespace EFCore.Kit.SeedWork
     /// <summary>
     /// 
     /// </summary>
-    public abstract class KitDbContext : DbContext
+    public abstract class RDbContext : DbContext
     {
         private readonly IMediator _mediator;
         /// <summary>
@@ -19,7 +19,7 @@ namespace EFCore.Kit.SeedWork
         /// </summary>
         /// <param name="options"></param>
         /// <param name="mediator"></param>
-        public KitDbContext(DbContextOptions options, IMediator mediator) : base(options)
+        public RDbContext(DbContextOptions options, IMediator mediator) : base(options)
         {
             _mediator = mediator ?? throw new ArgumentNullException(nameof(mediator));
         }

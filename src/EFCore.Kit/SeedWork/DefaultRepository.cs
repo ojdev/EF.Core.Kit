@@ -17,7 +17,7 @@ namespace EFCore.Kit.SeedWork
         /// 
         /// </summary>
         /// <param name="context"></param>
-        public DefaultRepository(KitDbContext context) : base(context)
+        public DefaultRepository(RDbContext context) : base(context)
         {
         }
     }
@@ -31,7 +31,7 @@ namespace EFCore.Kit.SeedWork
         where TKey : IComparable, IComparable<TKey>
     {
 
-        private readonly KitDbContext _context;
+        private readonly RDbContext _context;
         /// <summary>
         /// 
         /// </summary>
@@ -40,7 +40,7 @@ namespace EFCore.Kit.SeedWork
         /// 
         /// </summary>
         /// <param name="context"></param>
-        public DefaultRepository(KitDbContext context)
+        public DefaultRepository(RDbContext context)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }

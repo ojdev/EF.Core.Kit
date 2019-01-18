@@ -17,7 +17,7 @@ namespace EFCore.Kit.Extensions
         /// <param name="mediator"></param>
         /// <param name="ctx"></param>
         /// <returns></returns>
-        public static async Task DispatchDomainEventsAsync(this IMediator mediator, KitDbContext ctx)
+        public static async Task DispatchDomainEventsAsync(this IMediator mediator, RDbContext ctx)
         {
             var domainEntities = ctx.ChangeTracker
                   .Entries<IEntity>()
